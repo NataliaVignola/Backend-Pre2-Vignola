@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Brasil Crucera",
+    "description": "Bolsa de café 250gr.",
+    "price": 550,
+    "thumbnail": "bolsa-brasil.jpg",
+    "code": 5,
+    "stock": 50,
+    "id": 1,
+    "category": "250gr."
+  },
+  {
+    "title": "Etiopía Najá",
+    "description": "Bolsa de café 250gr.",
+    "price": 550,
+    "thumbnail": "bolsa-etiopia.jpg",
+    "code": 10,
+    "stock": 40,
+    "id": 2,
+    "category": "250gr."
+  },
+  {
+    "title": "Guatemala GTA",
+    "description": "Bolsa de café 250gr.",
+    "price": 700,
+    "thumbnail": "bolsa-guate.jpg",
+    "code": 15,
+    "stock": 30,
+    "id": 3,
+    "category": "250gr."
+  },
+  {
+    "title": "Colombia Supremo",
+    "description": "Bolsa de café 250gr.",
+    "price": 600,
+    "thumbnail": "bolsa-colombia.jpg",
+    "code": 20,
+    "stock": 35,
+    "id": 4,
+    "category": "250gr."
+  },
+  {
+    "title": "Kenia AA",
+    "description": "Bolsa de café 250gr.",
+    "price": 650,
+    "thumbnail": "bolsa-kenia.jpg",
+    "code": 25,
+    "stock": 28,
+    "id": 5,
+    "category": "250gr."
+  },
+  {
+    "title": "Perú Chanchamayo",
+    "description": "Bolsa de café 500gr.",
+    "price": 980,
+    "thumbnail": "bolsa-peru.jpg",
+    "code": 30,
+    "stock": 42,
+    "id": 6,
+    "category": "500gr."
+  },
+  {
+    "title": "Costa Rica Tarrazú",
+    "description": "Bolsa de café 500gr.",
+    "price": 1020,
+    "thumbnail": "bolsa-costa-rica.jpg",
+    "code": 35,
+    "stock": 20,
+    "id": 7,
+    "category": "500gr."
+  },
+  {
+    "title": "Honduras SHG",
+    "description": "Bolsa de café 500gr.",
+    "price": 1000,
+    "thumbnail": "bolsa-honduras.jpg",
+    "code": 40,
+    "stock": 55,
+    "id": 8,
+    "category": "500gr."
+  },
+  {
+    "title": "Nicaragua Jinotega",
+    "description": "Bolsa de café 500gr.",
+    "price": 940,
+    "thumbnail": "bolsa-nicaragua.jpg",
+    "code": 45,
+    "stock": 37,
+    "id": 9,
+    "category": "500gr."
+  },
+  {
+    "title": "India Monsooned Malabar",
+    "description": "Bolsa de café 500gr.",
+    "price": 1130,
+    "thumbnail": "bolsa-india.jpg",
+    "code": 50,
+    "stock": 32,
+    "id": 10,
+    "category": "500gr."
+  }
+]

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos en Tiempo Real</title>
+</head>
+<body>
+    <h1>Lista de Productos en Tiempo Real</h1>
+
+    <form action="/real-time" method="GET">
+        <label for="category">Categoría:</label>
+        <select name="category" id="category">
+            <option value="250gr.">250gr.</option>
+            <option value="500gr.">500gr.</option>
+        </select>
+
+        <label for="availableStock">Mostrar productos con stock:</label>
+        <input type="checkbox" name="availableStock" id="availableStock" value="true">
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    <ul>
+        {{#each products}}
+            <!-- Verificar si se deben mostrar los productos con stock -->
+            {{#if ../showOnlyAvailableStock}}
+                {{#if this.stock}}
+                    <li>{{this.title}} - {{this.price}} - Stock: {{this.stock}}</li>
+                {{/if}}
+            {{else}}
+                <!-- Verificar si la categoría coincide -->
+                {{#if (eq this.category ../selectedCategory)}}
+                    <li>{{this.title}} - {{this.price}}</li>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </ul>
+
+    <!-- Agregar el script para la conexión WebSocket -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Conectar al servidor WebSocket
+        const socket = io();
+
+        // Escuchar el evento 'productoCreado' y actualizar la lista
+        socket.on('productoCreado', (newProduct) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${newProduct.title} - ${newProduct.price}`;
+            document.querySelector('ul').appendChild(listItem);
+        });
+
+        // Escuchar el evento 'productoActualizado' y actualizar la lista (opcional)
+        socket.on('productoActualizado', (productId) => {
+            // Actualizar el elemento en la lista con el producto actualizado
+        });
+
+        // Escuchar el evento 'productoEliminado' y eliminar el elemento de la lista (opcional)
+        socket.on('productoEliminado', (productId) => {
+            // Eliminar el elemento de la lista con el producto eliminado
+        });
+    </script>
+</body>
+</html>

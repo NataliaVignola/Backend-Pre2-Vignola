@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+
+    <!-- Formulario para buscar por categoría y disponibilidad -->
+    <form action="/" method="GET">
+        <label for="category">Categoría:</label>
+        <select name="category" id="category">
+            <!-- Opciones de categorías -->
+            <option value="250gr.">250gr.</option>
+            <option value="500gr.">500gr.</option>
+        </select>
+
+        <label for="availableStock">Mostrar productos con stock:</label>
+        <input type="checkbox" name="availableStock" id="availableStock" value="true">
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Listar los productos que coinciden con la búsqueda -->
+    <ul>
+        {{#each products}}
+            <!-- Verificar si se deben mostrar los productos con stock -->
+            {{#if ../showOnlyAvailableStock}}
+                {{#if this.stock}}
+                    <li>{{this.title}} - {{this.price}} - Stock: {{this.stock}}</li>
+                {{/if}}
+            {{else}}
+                <!-- Verificar si la categoría coincide -->
+                {{#if (eq this.category ../selectedCategory)}}
+                    <li>{{this.title}} - {{this.price}}</li>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </ul>
+</body>
+</html>
